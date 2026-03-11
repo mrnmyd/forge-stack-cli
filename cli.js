@@ -46,21 +46,46 @@ async function run() {
 }
 
 function replacePlaceholder(dir, search, replace) {
-  const files = fs.readdirSync(dir);
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
 
-  for (const file of files) {
-    const filePath = path.join(dir, file);
+  for (const entry of entries) {
+    const filePath = path.join(dir, entry.name);
 
-    const stat = fs.statSync(filePath);
+    // Skip node_modules and .git
+    if (entry.name === "node_modules" || entry.name === ".git") {
+      continue;
+    }
 
-    if (stat.isDirectory()) {
+    if (entry.isDirectory()) {
       replacePlaceholder(filePath, search, replace);
-    } else {
-      const content = fs.readFileSync(filePath, "utf8");
+      continue;
+    }
 
-      if (content.includes(search)) {
-        fs.writeFileSync(filePath, content.replaceAll(search, replace));
-      }
+    const ext = path.extname(entry.name);
+
+    // Only process text-based files
+    const textExtensions = [
+      ".js",
+      ".ts",
+      ".tsx",
+      ".jsx",
+      ".json",
+      ".html",
+      ".css",
+      ".md",
+      ".env",
+      ".yml",
+      ".yaml",
+    ];
+
+    if (!textExtensions.includes(ext)) {
+      return;
+    }
+
+    const content = fs.readFileSync(filePath, "utf8");
+
+    if (content.includes(search)) {
+      fs.writeFileSync(filePath, content.replaceAll(search, replace));
     }
   }
 }

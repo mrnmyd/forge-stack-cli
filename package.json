@@ -1,6 +1,6 @@
 {
   "name": "forge-stack",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CLI to scaffold ForgeStack React projects",
   "type": "module",
   "bin": {

@@ -22,7 +22,11 @@ async function run() {
 
   const projectPath = path.join(process.cwd(), projectName);
 
-  execSync(`rm -rf ${projectPath}/.git`);
+  // remove template git history
+  fs.rmSync(path.join(projectPath, ".git"), {
+    recursive: true,
+    force: true,
+  });
 
   replacePlaceholder(projectPath, "forge-stack-template", projectName);
   replacePlaceholder(projectPath, "__API_BASE_URL__", apiBaseUrl);

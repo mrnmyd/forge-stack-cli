@@ -24,7 +24,7 @@ async function run() {
 
   execSync(`rm -rf ${projectPath}/.git`);
 
-  replacePlaceholder(projectPath, "__PROJECT_NAME__", projectName);
+  replacePlaceholder(projectPath, "forge-stack-template", projectName);
   replacePlaceholder(projectPath, "__API_BASE_URL__", apiBaseUrl);
 
   fs.copyFileSync(

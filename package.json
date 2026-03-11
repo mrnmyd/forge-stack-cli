@@ -1,21 +1,24 @@
 {
-  "name": "forge-stack-cli",
+  "name": "forge-stack",
   "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/mrnmyd/forge-stack.git"
-  },
+  "description": "CLI to scaffold ForgeStack React projects",
+  "type": "module",
   "bin": {
     "forge-stack": "./cli.js"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mrnmyd/forge-stack-cli.git"
+  },
+  "keywords": [
+    "react",
+    "vite",
+    "scaffold",
+    "cli",
+    "forge-stack"
+  ],
+  "author": "Mrinmoy Dutta",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "@clack/prompts": "^1.1.0"
   }

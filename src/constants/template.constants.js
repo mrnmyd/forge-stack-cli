@@ -1,5 +1,5 @@
-export const TEMPLATE_REPO = "https://github.com/mrnmyd/forge-stack.git";
-export const PLACEHOLDER_PROJECT_NAME = "forgestack-react-template";
+export const TEMPLATE_REPO = "https://github.com/mrnmyd/forge-stack-react-template.git";
+export const PLACEHOLDER_PROJECT_NAME = "forge-stack-react-template";
 export const PLACEHOLDER_API_BASE_URL = "__API_BASE_URL__";
 
 export const SKIPPED_DIRECTORIES = new Set([".git", "node_modules", "dist"]);

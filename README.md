@@ -4,23 +4,6 @@
 
 It is not the React template itself. This repository contains the generator. The generated app comes from the ForgeStack template repository and is then customized with your project name and API base URL.
 
-## Publishability
-
-Yes, this project is publishable in its current form as an npm CLI package.
-
-What supports that:
-
-- it has a valid `bin` entry and executable launcher
-- it packages only the CLI source needed at runtime
-- `npm pack --dry-run` succeeds and produces a clean tarball
-- the scaffold flow is coherent: prompt -> clone template -> replace placeholders -> create `.env` -> install dependencies
-
-Important constraint:
-
-- this package is only as reliable as the template repository it clones from: `https://github.com/mrnmyd/forge-stack-react-template.git`
-
-That means the CLI is publishable now, but the end-user experience also depends on the template repo remaining reachable, public, and installable.
-
 ## What The Generated Template Provides
 
 The generated ForgeStack React project is a production-oriented scaffold for applications that need more than a blank Vite starter.
@@ -144,16 +127,6 @@ src/
 ## Package Metadata
 
 - Package name: `forge-stack`
-- Current version: `1.2.0`
+- Current version: `1.3.1`
 - Binary: `forge-stack`
 - Repository: `https://github.com/mrnmyd/forge-stack-cli.git`
-
-## Recommended Before Publishing
-
-The package is publishable as-is, but these checks are still worth doing before an npm release:
-
-- verify the template repo URL is final and public
-- confirm the template repository README matches what the CLI promises
-- test `npx forge-stack` from a clean machine or fresh temp directory
-- consider adding `files` to `package.json` for stricter package contents control
-- consider adding a non-empty validation rule for API base URL if that value is required for every generated app

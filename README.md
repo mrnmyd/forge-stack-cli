@@ -127,6 +127,6 @@ src/
 ## Package Metadata
 
 - Package name: `forge-stack`
-- Current version: `1.3.1`
+- Current version: `1.3.2`
 - Binary: `forge-stack`
 - Repository: `https://github.com/mrnmyd/forge-stack-cli.git`
